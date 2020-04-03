@@ -30,6 +30,11 @@ Fields:(a)Pick up point/location of services, (b)details/description of items/se
 
 
 DATABASE Schema Diagram
+
+
+
+
+
 Table 1:
 
 USERS (for both categories:"homeless individual" and "Philanthropist")
