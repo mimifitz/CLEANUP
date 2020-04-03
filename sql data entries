@@ -1,0 +1,28 @@
+INSERT INTO users (name, location, password, email) VALUES ("rita", "el raval", "amagirl", "rita@gmail.com");
+
+
+INSERT INTO services (type, name, description, availability, location, userId) VALUES 
+("treatment services", "hair wash", "I have a free spot for anyone who wants to be pampered with a 
+therapeutic hair wash and treatment.Can also offer hair bleach for 
+recipient.", "2020-04-15 12:30:00", "carrer sant silvestre 39,08922", 1);
+
+CREATE TABLE `services` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`type` TEXT NOT NULL,
+	`name` TEXT NOT NULL,
+	`description` varchar(255) NOT NULL,
+	`availability` DATETIME NOT NULL,
+	`location` TEXT NOT NULL,
+	`userId` INT NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+ALTER TABLE `services` ADD CONSTRAINT `services_fk0` FOREIGN KEY (`userId`) REFERENCES `services`(`id`);
+
+
+
+INSERT INTO services (type, name, description, availability, location, userId) VALUES 
+("legal services", "immigration lawyer", "I will be available to give immigration advices and support to anyone having residence issues in my office.I can come to your destination as well.", "2020-07-25 10:10:00", "carrer de mimi 26,08023", 4);
+
+
+INSERT INTO users (name, location, password, email) VALUES ("nuria", "barcelona", "labella", "pinknuria@gmail.com");

@@ -6,6 +6,8 @@ Donors will render services and items ranging from medical assistance, mentorshi
 
 USER FLOW DIAGRAM:
 
+ ![user flow diagram](/IMAGES/userflow.png)
+
 
 
 
@@ -31,6 +33,9 @@ Fields:(a)Pick up point/location of services, (b)details/description of items/se
 
 DATABASE Schema Diagram
 
+![Database Schema Diagram](/IMAGES/schema.png)
+
+
 
 
 
@@ -45,6 +50,22 @@ Services or items available on offer.
 
 
 API ROUTE
+
+USERS:
+![Api routes](/IMAGES/users.png)
+
+
+SERVICES:
+![Api routes](/IMAGES/services1.png)
+![Api routes](/IMAGES/services2.png)
+
+
+
+
+
+
+
+
 
 
 
