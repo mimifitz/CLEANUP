@@ -24,7 +24,7 @@ router.get('/cleanup', (req, res) => {
         .catch(err => res.status(500).send(err));
 });
 
-//2.QUERYING INFO ABOUT SPECIFIC COLUMN/EOW
+//2.QUERYING INFO ABOUT SPECIFIC COLUMN/ROW
 router.get('/users/:id', (req, res) => {
     // Respond by send the full list of data in "users" table
     db(`SELECT * FROM users WHERE id=${req.params.users_id};`)
@@ -36,9 +36,9 @@ router.get('/users/:id', (req, res) => {
 
 //CREATE A TABLE INTO THE DATABASE: USERS
 router.post(`/users`, (req, res) => {
-    //to launch a database query using mysql syntax:
-    db `INSERT INTO users (name, location, password, email) VALUES 
-  (${req.body.name}, ${req.body.location}, ${req.body.password}, ${req.body.email};`
+    //launch a database query using mysql syntax:
+    db(`INSERT INTO users (name, location, password, email) VALUES 
+(${req.body.name}, ${req.body.location}, ${req.body.password}, ${req.body.email});`)
         .then(results => {
             if (results.error) {
                 res.status("ERROR! TRY AGAIN").send({
