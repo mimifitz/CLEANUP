@@ -8,85 +8,90 @@ router.use(bodyParser.json());
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+    res.send("Woezo to API");
 });
 
 //API STARTS FROM HERE.ALL CODES BUT BE EDIT TO SUIT MY API ROUTES DETAILS
 
-// router.get(`/${VERSION}/todos`, (req, res) => {
-//   //version included
-//   // Send back the full list of items
-//   db("SELECT * FROM items ORDER BY id ASC;")
-//     .then(results => {
-//       res.send(results.data);
-//     })
-//     .catch(err => res.status(500).send(err));
-// });
+//TABLE 1:USERS
+//REQUEST FOR ALL INFO OF TABLE "USERS" IN DATABASE
+router.get('/cleanup', (req, res) => {
+    // Respond by send the full list of data in "users" table
+    db("SELECT * FROM users ORDER BY id ASC;")
+        .then(results => {
+            res.send(results.data);
+        })
+        .catch(err => res.status(500).send(err));
+});
 
-// router.post(`/${VERSION}/todos`, (req, res) => {
-//   //CREATE
-//   // The request's body is available in req.body
-//   // If the query is successfull you should send back the full list of items
-//   // Add your code here
+//2.QUERYING INFO ABOUT SPECIFIC COLUMN/EOW
+router.get('/users/:id', (req, res) => {
+    // Respond by send the full list of data in "users" table
+    db(`SELECT * FROM users WHERE id=${req.params.users_id};`)
+        .then(results => {
+            res.send(results.data);
+        })
+        .catch(err => res.status(500).send(err));
+});
 
-//   //to launch a database query using mysql syntax:
-//   db(`INSERT INTO items (text, complete) VALUES 
-//   ('${req.body.text}', ${req.body.complete});`)
-//     .then(results => {
-//       if (results.error) {
-//         res.status(404).send({
-//           error: results.error
-//         });
-//       } else {
-//         res.send({
-//           body: results.data
-//         });
-//       }
-//     })
-//     .catch(err => res.status(500).send(err));
-// });
+//CREATE A TABLE INTO THE DATABASE: USERS
+router.post(`/users`, (req, res) => {
+    //to launch a database query using mysql syntax:
+    db `INSERT INTO users (name, location, password, email) VALUES 
+  (${req.body.name}, ${req.body.location}, ${req.body.password}, ${req.body.email};`
+        .then(results => {
+            if (results.error) {
+                res.status("ERROR! TRY AGAIN").send({
+                    error: results.error
+                });
+            } else {
+                res.send({
+                    body: results.data
+                });
+            }
+        })
+        .catch(err => res.status("NAH,TRY AGAIN").send(err));
+});
 
-// //UPDATE
-// router.put(`/${VERSION}/todos/:todo_id`, (req, res) => {
-//   // The request's body is available in req.body
-//   // URL params are available in req.params
-//   // If the query is successfull you should send back the full list of items
-//   // Add your code here
-//   //
-//   db(`UPDATE items set text='${req.body.text}', 
-//   complete=${req.body.complete} WHERE id=${req.params.todo_id};`)
-//     .then(results => {
-//       if (results.error) {
-//         res.status(404).send({
-//           error: results.error
-//         });
-//       } else {
-//         res.send({
-//           body: results.data
-//         });
-//       }
-//     })
-//     .catch(err => res.status(500).send(err));
-// });
-// //DELETE
-// router.delete(`/${VERSION}/todos/:todo_id`, (req, res) => {
-//   // URL params are available in req.params
-//   // Add your code here
-//   //
-//   db(`DELETE FROM items WHERE id=${req.params.todo_id};`)
-//     .then(results => {
-//       if (results.error) {
-//         res.status(404).send({
-//           error: results.error
-//         });
-//       } else {
-//         res.send({
-//           body: results.data
-//         });
-//       }
-//     })
-//     .catch(err => res.status(500).send(err));
-// });
+//UPDATE 
+router.put(`/users/:users_id`, (req, res) => {
+    // The request's body is available in req.body
+    // URL params are available in req.params
+    db(`UPDATE users set name=
+            ${ req.body.name},
+            location = ${req.body.location}
+          password='${req.body.password}', email='${req.body.email}' WHERE id=${req.params.users_id};`)
+        .then(results => {
+            if (results.error) {
+                res.status("ERROR! TRY AGAIN").send({ //OR  //res.status(404).send({
+                    error: results.error
+                });
+            } else {
+                res.send({
+                    body: results.data
+                });
+            }
+        })
+        .catch(err => res.status("NAH,TRY AGAIN").send(err));
+});
+
+//DELETE
+router.delete(`/users:users_id`, (req, res) => {
+    // URL params are available in req.params
+    db(`DELETE FROM users WHERE id=${req.params.users_id};`)
+        .then(results => {
+            if (results.error) {
+                res.status("ERROR! TRY AGAIN").send({ //OR res.status(404).send({
+                    error: results.error
+                });
+            } else {
+                res.send({
+                    body: results.data
+                });
+            }
+        })
+        .catch(err => res.status("NAH,TRY AGAIN").send(err));
+});
 
 
 

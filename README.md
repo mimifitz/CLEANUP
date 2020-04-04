@@ -4,7 +4,7 @@ In this repository,a full stack app will be built starting from back end,using R
 
 ## NAME OF APP: CLEANUP
 
-## INTRO;
+## INTRO:
 CLEANUP is a  charitable platform created for philanthropist/charitable persons who are interested donating  or offer direct services and items to homeless needy individuals who are on the streets due to circumstances and are poised to improve their lives.CLEANUP platform will allow both free and barter trade services and items to needy homeless as well as the creation of small communities or groups who could team up together to help a needy homeless fellow. The whole concept is geared towards showing kindness and love towards our fellow fallen individuals who needs help to rise again.
 Donors will render services and items ranging from medical assistance, mentorship, clothes, accomodation/housing, food,networking etc etc.
 

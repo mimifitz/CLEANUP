@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function(req, res, next) {
-    res.send("Successfully done");
+    res.send("I knew I could do this! BOOM!");
 });
 
 app.use('/users', usersRouter);

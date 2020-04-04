@@ -13,13 +13,13 @@ const con = mysql.createConnection({
     database: DB_NAME || "cleanup",
     multipleStatements: true
 });
-
+//DONE & TEST.(SUCCESSFULL.)
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
     let sql = "";
 
-    //Creating users table
+    //Creating users table(TABLE 1)
     sql =
         "DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, name TEXT, location TEXT, password TEXT(8), email TEXT, PRIMARY KEY (id));";
     con.query(sql, function(err, result) {
@@ -34,22 +34,23 @@ con.connect(function(err) {
     con.query(sql, function(err, result) {
         if (err) throw err;
         console.log(
-            "Creation of 'test' user was successful!"
+            "Creation of 'test' was successful!"
         );
     });
 
-    //Creating services table
+    //Creating services table(TABLE 2)
     sql =
-        "DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, name TEXT, location TEXT, password TEXT(8), email TEXT, PRIMARY KEY (id));";
+        "DROP TABLE if exists services; CREATE TABLE services(id INT NOT NULL AUTO_INCREMENT, type TEXT NOT NULL, name TEXT NOT NULL, description VARCHAR(255) NOT NULL, availability DATETIME NOT NULL, location TEXT NOT NULL, userId INT NOT NULL,PRIMARY KEY (id));";
     con.query(sql, function(err, result) {
         if (err) throw err;
         console.log(
-            "Table creation `users` was successful!"
+            "Table creation `services` was successful!"
         );
     });
-    //Adding a test services with dummy data MUST EDIT AND ADD SERVICES TABLE AND CREAT MORE DETAILS
+    //Adding a test services with dummy data 
     sql =
-        "INSERT INTO users (name, location, password, email) VALUES ('rita', 'el raval', 'testing', 'test@test.com');";
+        "INSERT INTO services (type, name, description, availability, location, userId) VALUES ('legal services', 'immigration lawyer', 'I will be available to give immigration advices and support to anyone having residence issues in my office.I can come to your destination as well.', '2020-07-25 10:10:00', 'carrer de mimi 26,08023', 4);";
+
     con.query(sql, function(err, result) {
         if (err) throw err;
         console.log(
