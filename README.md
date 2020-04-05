@@ -76,15 +76,15 @@ Services or items available on offer.
 
 
 
-API ROUTE
+API ROUTE DESIGNS
 
 USERS:
-![Api routes](/IMAGES/users.png)
+![Api routes](/IMAGES/APIroutesdesigns/users.png)
 
 
 SERVICES:
-![Api routes](/IMAGES/services1.png)
-![Api routes](/IMAGES/services2.png)
+![Api routes](/IMAGES/APIroutesdesigns/services.jpg)
+![Api routes](/IMAGES/APIroutesdesigns/services2.jpg)
 
 
 

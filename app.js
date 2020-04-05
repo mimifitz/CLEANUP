@@ -19,7 +19,7 @@ app.get("/", function(req, res, next) {
     res.send("I knew I could do this! BOOM!");
 });
 
-app.use('/users', usersRouter);
+app.use('/cleanup', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
