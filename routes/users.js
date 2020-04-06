@@ -32,7 +32,7 @@ router.get('/users/:id', (req, res) => {
 router.post(`/users`, (req, res) => {
     //launch a database query using mysql syntax:
     db(`INSERT INTO users (name, location, password, email) VALUES 
-    (${req.body.name}, ${req.body.location}, ${req.body.password}, ${req.body.email};`)
+    ('${req.body.name}', '${req.body.location}', '${req.body.password}', '${req.body.email}');`)
         // db(`INSERT INTO users (name, location, password, email) VALUES ('lily', 'cartagena', 'lviajera', 'lily@hotmail.com');`
         // )
         .then((results) => {
@@ -53,10 +53,10 @@ router.post(`/users`, (req, res) => {
 router.put(`/users/:id`, (req, res) => {
     // The request's body is available in req.body
     // URL params are available in req.params
-    db(`UPDATE users set name=
-            ${ req.body.name},
-            location = ${req.body.location},
-          password=${req.body.password}, email=${req.body.email} WHERE id=${req.params.id};`)
+    db(`UPDATE users set name =
+            '${ req.body.name}',
+            location = '${req.body.location}',
+          password='${req.body.password}', email='${req.body.email}' WHERE id=${req.params.id};`)
         .then(results => {
             if (results.error) {
                 res.status("ERROR! TRY AGAIN").send({ //OR  //res.status(404).send({
