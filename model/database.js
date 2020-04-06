@@ -37,6 +37,29 @@ con.connect(function(err) {
             "Creation of 'test' was successful!"
         );
     });
+    //Adding a test user with dummy data 2
+    sql =
+        "INSERT INTO users (name, location, password, email) VALUES ('Dave', 'san juan', 'kingdave', 'macho@gmail.com');";
+    con.query(sql, function(err, result) {
+        if (err) throw err;
+        console.log("Creation of 'test' was successful!");
+    });
+
+    //Adding a test user with dummy data 3
+    sql =
+        "INSERT INTO users (name, location, password, email) VALUES ('Olya', 'sant andria', 'gagagaga', 'girl@gmail.com');";
+    con.query(sql, function(err, result) {
+        if (err) throw err;
+        console.log("Creation of 'test' was successful!");
+    });
+
+    //Adding a test user with dummy data 4
+    sql =
+        "INSERT INTO users (name, location, password, email) VALUES ('Olya', 'sant andria', 'gagagaga', 'girl@gmail.com');";
+    con.query(sql, function(err, result) {
+        if (err) throw err;
+        console.log("Creation of 'test' was successful!");
+    });
 
     //Creating services table(TABLE 2)
     sql =

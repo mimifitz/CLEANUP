@@ -5,16 +5,12 @@ const db = require("../model/helper");
 
 router.use(bodyParser.json());
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-    res.send("Woezo to API");
-});
 
 //API STARTS FROM HERE
 
 //TABLE 2:SERVICES
 //1.REQUEST FOR ALL INFO OF TABLE "USERS" IN DATABASE
-router.get("/services", (req, res) => {
+router.get('/services', (req, res) => {
     // Respond by send the full list of data in "services" table
     db("SELECT * FROM users ORDER BY id ASC;")
         .then(results => {
@@ -24,9 +20,9 @@ router.get("/services", (req, res) => {
 });
 
 //2.QUERYING INFO ABOUT SPECIFIC COLUMN/ROW
-router.get(`/services/:id`, (req, res) => {
+router.get('/services/:id', (req, res) => {
     // Respond by send the full list of data in "users" table
-    db(`SELECT * FROM users WHERE id=${req.params.users_id};`)
+    db(`SELECT * FROM users WHERE id=${req.params.id};`)
         .then(results => {
             res.send(results.data);
         })
@@ -34,11 +30,11 @@ router.get(`/services/:id`, (req, res) => {
 });
 
 //3.CREATE A TABLE INTO THE DATABASE: USERS
-router.post(`/services`, (req, res) => {
+router.post('/services', (req, res) => {
     //launch a database query using mysql syntax:
     db(`INSERT INTO services (type, name, description,
         availability, location, userId) VALUES 
-(${req.body.type}, ${req.body.name}, ${req.body.description} ${req.body.availability}, ${req.body.location}, ${req.body.userId});`)
+(${req.body.type}, ${req.body.name}, ${req.body.description}, ${req.body.availability}, ${req.body.location}, ${req.body.userId});`)
         .then(results => {
             if (results.error) {
                 res.status("ERROR! TRY AGAIN").send({
@@ -54,11 +50,11 @@ router.post(`/services`, (req, res) => {
 });
 
 //4.UPDATE DATA IN THE DATABASE
-router.put(`/cleanup/:services_id`, (req, res) => {
+router.put('/services/:id', (req, res) => {
     // The request's body is available in req.body
     // URL params are available in req.params
     db(`UPDATE services set name=
-            (${req.body.type}, ${req.body.name}, ${req.body.description} ${req.body.availability}, ${req.body.location}, ${req.body.userId} WHERE id=${req.params.services_id};`)
+            (${req.body.type}, ${req.body.name}, ${req.body.description}, ${req.body.availability}, ${req.body.location}, ${req.body.userId} WHERE id=${req.params.id};`)
         .then(results => {
             if (results.error) {
                 res.status("ERROR! TRY AGAIN").send({
@@ -75,9 +71,9 @@ router.put(`/cleanup/:services_id`, (req, res) => {
 });
 
 //5.DELETE
-router.delete(`/cleanup:service_id`, (req, res) => {
+router.delete('/services/:id', (req, res) => {
     // URL params are available in req.params
-    db(`DELETE FROM services WHERE id=${req.params.services_id};`)
+    db(`DELETE FROM services WHERE id=${req.params.id};`)
         .then(results => {
             if (results.error) {
                 res.status("ERROR! TRY AGAIN").send({

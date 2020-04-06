@@ -26,3 +26,15 @@ INSERT INTO services (type, name, description, availability, location, userId) V
 
 
 INSERT INTO users (name, location, password, email) VALUES ("nuria", "barcelona", "labella", "pinknuria@gmail.com");
+ "name":"Dave",
+    "location":"san juan",
+    "password":"kingdave",
+    "email":"macho@gmail.com"
+	INSERT INTO users (name, location, password, email) VALUES ("Dave", "san juan", "kingdave", "macho@gmail.com");
+
+	{
+    "name": "Lily",
+    "location": "cartagena",
+    "password": "lviajera",
+    "email": "lily@hotmail.com"
+}
