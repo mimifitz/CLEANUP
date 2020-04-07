@@ -10,16 +10,12 @@ Donors will render services and items ranging from medical assistance, mentorshi
 
 # Objectives
 
-- Build a database. 
+- Build a database.
 - Build an API server.
 - Create back end first,TEST all routes in postman
 - Start and finish on front end possibly.
 
 STEPS ON ENTIRE PROJECT:
-
-
-
-
 
 ## Startup : DEVELOPMENT SETUPS
 
@@ -40,8 +36,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASS=root
 DB_NAME=cleanup
-
-*
+```
 
 
 #### *Make corrections to the file,if any data entry is missing out*
@@ -62,10 +57,6 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 - Client is configured so all API calls will be proxied to port 5000 for a smoother development experience. Yay!
 - You can test your client app in `http://localhost:3000`
 - You can test your API in `http://localhost:5000/api`
-
-
-
-
 
 
 # USER FLOW DIAGRAM:
@@ -152,7 +143,7 @@ Alternatively, you can rename the provided `.env.example` file to `.env`.
 
 Type `mysql -u root -p` to access the MySQL CLI using your password.
 
-In the MySQL CLI, type `create database todos;` to create a database in MySQL.
+In the MySQL CLI, type `create database cleanup;` to create a database in MySQL.
 
 Run the following in the MySQL CLI: `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';` (replace `YOUR_PASSWORD` with your actual password)
 
