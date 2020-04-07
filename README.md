@@ -64,10 +64,10 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 # USER FLOW DIAGRAM:
 
 USERS
-![user flow diagram](/IMAGES/users.png)
+![user flow diagram](/IMAGES/APIroutesdesigns/users.png)
 
 SERVICES
-![user flow diagram](/IMAGES/services.png)
+![user flow diagram](/IMAGES/APIroutesdesigns/services.jpg)
 
 # DESCRIPTION:
 
