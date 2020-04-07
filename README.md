@@ -63,11 +63,11 @@ Run `node model/database.js` in your **TERMINAL**, in the **root** folder of you
 
 # USER FLOW DIAGRAM:
 
-USERS
-![user flow diagram](/IMAGES/APIroutesdesigns/users.png)
+SERVICES:
+![user flow diagram](/IMAGES/Userflow/users.png)
 
-SERVICES
-![user flow diagram](/IMAGES/APIroutesdesigns/services.jpg)
+USERS:
+![user flow diagram](/IMAGES/Userflow/services.png)
 
 # DESCRIPTION:
 
@@ -107,7 +107,7 @@ SERVICES:
 ![Api routes](/IMAGES/APIroutesdesigns/services.jpg)
 ![Api routes](/IMAGES/APIroutesdesigns/services2.jpg)
 
-    # *SUMMARY*
+    # * SUMMARY *
 
 # `INSPIRATION FOR THIS PROJECT` (The _WHY_ and _WHO_)
 
@@ -122,8 +122,7 @@ THE WHO (who benefits)
 ## `TECHNOLOGIES USED` (backend)
 
 *mysql
-*sql server
-\*node/espress
+*node/espress
 
 ## `MAJOR STEPS IN BUILDING`
 
